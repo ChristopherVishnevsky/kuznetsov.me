@@ -1,0 +1,23 @@
+[
+  {
+    "title": "ECO220 Data Analysis",
+    "description": "A statistical analysis project from my coursework in data analysis.",
+    "tags": ["Statistics", "Data analysis", "Coursework"],
+    "link": "",
+    "visible": true
+  },
+  {
+    "title": "Economic indicators dashboard",
+    "description": "An interactive dashboard tracking inflation, interest rates and unemployment over time.",
+    "tags": ["Python", "Pandas", "Plotly"],
+    "link": "",
+    "visible": true
+  },
+  {
+    "title": "This website",
+    "description": "A one-page digital business card, designed in Figma.",
+    "tags": ["Figma", "Design"],
+    "link": "",
+    "visible": true
+  }
+]

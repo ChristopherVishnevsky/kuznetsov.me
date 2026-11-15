@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikolay Kuznetsov</title>
+<meta name="description" content="Economics student interested in data, mathematics and building things with code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+  --bg: #F2F5FB;
+  --ink: #0A1A3F;
+  --muted: #56637F;
+  --line: #D3DBEC;
+  --accent: #2748F5;
+  --pop: #D5E0FF;
+  --navy: #0A1A3F;
+  --panel: #0A1A3F;
+  --on-panel: #F2F5FB;
+  --panel-muted: #9AA8CC;
+  --panel-line: #24376A;
+  --display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pad: clamp(20px, 5.5vw, 80px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #07112B;
+    --ink: #F2F5FB;
+    --muted: #9AA8CC;
+    --line: #1F3160;
+    --accent: #7C95FF;
+    --panel: #12255A;
+    --panel-line: #2A4180;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #07112B;
+  --ink: #F2F5FB;
+  --muted: #9AA8CC;
+  --line: #1F3160;
+  --accent: #7C95FF;
+  --panel: #12255A;
+  --panel-line: #2A4180;
+}
+html { background: var(--bg); scroll-padding-top: env(safe-area-inset-top, 0px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.5 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+.panel a:focus-visible { outline-color: var(--pop); }
+h1, h2, p, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+.wrap { max-width: 1440px; margin-inline: auto; padding-inline: var(--pad); }
+.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.label { font: 500 12px/1.4 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* nav */
+.nav { display: flex; align-items: center; justify-content: space-between; padding-block: 28px; }
+.mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--bg); font: 500 15px/1 var(--body); }
+.nav nav { display: flex; gap: 40px; }
+.nav nav a { color: var(--ink); }
+.nav nav a:hover { color: var(--accent); }
+
+/* hero */
+.hero { padding-top: clamp(32px, 4vw, 56px); padding-bottom: clamp(56px, 7vw, 96px); }
+h1 {
+  font: 500 clamp(4rem, 11vw, 10rem)/.92 var(--display);
+  letter-spacing: -.04em;
+}
+h1 span { color: var(--accent); }
+.lede { margin-top: 36px; max-width: 520px; font-size: 20px; color: var(--muted); }
+.actions { margin-top: 36px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.btn-cv {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 32px;
+  padding: 12px 12px 12px 24px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); font: 500 20px/1 var(--body);
+  transition: transform .18s ease;
+}
+.btn-cv .disc { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--bg); color: var(--ink); font-size: 24px; transition: transform .18s ease; }
+.btn-cv > span:first-child { line-height: 56px; }
+@media (hover: hover) { .btn-cv:hover .disc { transform: translateY(3px); } }
+.btn-li {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 11px 20px 11px 22.5px; border: 1.5px solid var(--ink); border-radius: 999px;
+  font: 500 16px/1.2 var(--body); color: var(--ink);
+  transition: background .18s ease, color .18s ease;
+}
+.btn-li .ic:first-child { font-size: 18px; }
+.btn-li .ic:last-child { font-size: 16px; }
+@media (hover: hover) { .btn-li:hover { background: var(--ink); color: var(--bg); } }
+
+/* snapshot */
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: clamp(56px, 7vw, 96px); }
+.fact { border-top: 1px solid var(--ink); padding-top: 24px; display: grid; gap: 14px; align-content: start; }
+.fact p:last-child { font-size: 20px; }
+.facts h2 { grid-column: 1 / -1; }
+
+/* projects */
+.projects { padding-bottom: clamp(64px, 8vw, 112px); }
+.sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+h2 { font: 500 clamp(2.25rem, 4vw, 3.25rem)/1.04 var(--display); letter-spacing: -.03em; }
+.list { border-bottom: 1px solid var(--line); }
+.row {
+  display: grid; grid-template-columns: 56px 1fr 300px 32px; align-items: center; gap: 32px;
+  padding-block: 40px; border-top: 1px solid var(--line);
+}
+.idx { font: 500 12px/1 var(--body); letter-spacing: .1em; color: var(--accent); }
+.body { display: grid; gap: 10px; }
+.title { font: 500 32px/1.12 var(--display); letter-spacing: -.02em; }
+.desc { color: var(--muted); }
+.tags { font: 500 12px/1.5 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.go { font-size: 32px; transition: transform .18s ease; }
+.row:hover .go { transform: translate(4px, -4px); }
+.row:hover .title { color: var(--accent); }
+
+/* contact */
+.contact { max-width: 1440px; margin-inline: auto; padding: 0 clamp(12px, 1.7vw, 24px) clamp(12px, 1.7vw, 24px); }
+.panel {
+  background: var(--panel); color: var(--on-panel); border-radius: clamp(28px, 3vw, 40px);
+  padding: clamp(28px, 4.5vw, 56px) clamp(24px, 5vw, 64px);
+  display: grid; grid-template-columns: 440px 1fr; gap: clamp(32px, 5vw, 64px);
+}
+.pitch { display: grid; gap: 24px; align-content: start; }
+.pitch .label { color: var(--pop); }
+.pitch h2 { color: var(--on-panel); }
+.copy { font-size: 20px; color: var(--panel-muted); }
+.btn-mail {
+  justify-self: start; display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 24px; border-radius: 999px; background: var(--pop); color: var(--navy);
+  font: 500 16px/1.2 var(--body); transition: transform .18s ease;
+}
+@media (hover: hover) { .btn-mail:hover { transform: translateY(-2px); } }
+.details { border-bottom: 1px solid var(--panel-line); align-self: start; }
+.drow {
+  display: grid; grid-template-columns: 130px 1fr 24px; align-items: center; gap: 24px;
+  padding-block: 22px; border-top: 1px solid var(--panel-line);
+}
+.drow .label { color: var(--panel-muted); }
+.val { font: 500 24px/1.2 var(--display); letter-spacing: -.01em; overflow-wrap: anywhere; }
+.drow .ic { font-size: 24px; color: var(--on-panel); transition: transform .18s ease; }
+a.drow:hover .ic { transform: translate(3px, -3px); }
+a.drow:hover .val { color: var(--pop); }
+
+/* footer */
+footer { display: flex; justify-content: space-between; padding-block: 32px 40px; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .nav { padding-block: 20px; }
+  .nav nav { gap: 18px; font-size: 15px; }
+  .lede { font-size: 17px; margin-top: 28px; }
+  .actions { align-items: stretch; margin-top: 28px; }
+  .btn-li { justify-content: flex-start; padding-right: 30.5px; }
+  .btn-li .ic:last-child { margin-left: auto; }
+  .facts { grid-template-columns: 1fr; gap: 28px; }
+  .fact p:last-child { font-size: 17px; }
+  .sec-head { flex-direction: column-reverse; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
+  .row { grid-template-columns: 1fr auto; gap: 14px; padding-block: 28px; }
+  .idx { grid-column: 1; grid-row: 1; }
+  .go { grid-column: 2; grid-row: 1; font-size: 24px; }
+  .body { grid-column: 1 / -1; grid-row: 2; }
+  .tags { grid-column: 1 / -1; grid-row: 3; }
+  .title { font-size: 26px; }
+  .panel { grid-template-columns: 1fr; }
+  .drow { grid-template-columns: 1fr 22px; gap: 6px 16px; padding-block: 22px; }
+  .drow .label { grid-column: 1; grid-row: 1; }
+  .drow .val { grid-column: 1; grid-row: 2; font-size: 20px; }
+  .drow .ic { grid-column: 2; grid-row: 1 / span 2; }
+  .btn-mail { justify-self: stretch; justify-content: center; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M6 9H2v12h4z"/><circle cx="4" cy="4" r="2"/></symbol>
+</svg>
+
+<header class="nav wrap" id="top">
+  <a class="mark" href="#top" aria-label="Back to top">NK</a>
+  <nav aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Nikolay<br><span>Kuznetsov</span></h1>
+    <p class="lede">Economics student interested in data, mathematics and building things with code.</p>
+    <div class="actions">
+      <a class="btn-cv" href="cv.pdf" download>
+        <span>Download CV</span>
+        <span class="disc"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg></span>
+      </a>
+      <a class="btn-li" href="https://www.linkedin.com/in/nkuznetsov1" target="_blank" rel="noopener">
+        <svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg>
+        LinkedIn
+        <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="facts wrap" id="about">
+    <h2>About me</h2>
+    <div class="fact">
+      <p class="label">Studying</p>
+      <p>Second-year B.S. Economics student at the University of Toronto, minoring in Mathematics and Applied Data Science.</p>
+    </div>
+    <div class="fact">
+      <p class="label">Involved in</p>
+      <p>President of the Russian Speaking Association and Events Committee member at the Economics Club.</p>
+    </div>
+    <div class="fact">
+      <p class="label">Toolkit</p>
+      <p>Python, JavaScript and Excel for data analysis and web projects, plus hands-on experience with Claude Code.</p>
+    </div>
+  </section>
+
+  <section class="projects wrap" id="projects">
+    <div class="sec-head">
+      <h2>Selected projects</h2>
+      <p class="label" id="project-count" aria-live="polite"></p>
+    </div>
+    <!-- Filled from projects.json by the script at the bottom of this page. -->
+    <ul class="list" id="project-list"></ul>
+    <noscript><p class="desc">Turn on JavaScript to see my projects.</p></noscript>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="panel">
+      <div class="pitch">
+        <p class="label">Contact</p>
+        <h2>Let’s build something together.</h2>
+        <p class="copy">Have a project, an opportunity or a question? Say hello.</p>
+        <a class="btn-mail" href="mailto:name@email.com">Email me <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="details">
+        <li><a class="drow" href="mailto:name@email.com"><span class="label">Email</span><span class="val">name@email.com</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a class="drow" href="https://github.com/username" target="_blank" rel="noopener"><span class="label">GitHub</span><span class="val">github.com/username</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><div class="drow"><span class="label">Location</span><span class="val">Toronto, Ontario</span><span></span></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="label">© 2026</p>
+  <a class="label" href="#top">Back to top</a>
+</footer>
+
+<script>
+/* Projects come from projects.json. Edit that file to add, hide, reorder or remove projects.
+   Text is inserted with textContent (never as HTML) and only http(s) links are used. */
+(function () {
+  var list = document.getElementById('project-list');
+  var count = document.getElementById('project-count');
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function safeUrl(u) {
+    if (typeof u !== 'string' || !u.trim()) return null;
+    try {
+      var x = new URL(u.trim(), location.href);
+      return (x.protocol === 'https:' || x.protocol === 'http:') ? x : null;
+    } catch (e) { return null; }
+  }
+  function arrow() {
+    var s = document.createElementNS(SVGNS, 'svg');
+    s.setAttribute('class', 'ic go');
+    s.setAttribute('aria-hidden', 'true');
+    var u = document.createElementNS(SVGNS, 'use');
+    u.setAttribute('href', '#i-arrow');
+    s.appendChild(u);
+    return s;
+  }
+  function render(items) {
+    var shown = items.filter(function (p) {
+      return p && p.visible !== false && typeof p.title === 'string' && p.title.trim();
+    });
+    list.textContent = '';
+    shown.forEach(function (p, i) {
+      var url = safeUrl(p.link);
+      var li = document.createElement('li');
+      var row = el(url ? 'a' : 'div', 'row');
+      if (url) {
+        row.href = url.href;
+        if (url.origin !== location.origin) { row.target = '_blank'; row.rel = 'noopener'; }
+      }
+      row.appendChild(el('span', 'idx', String(i + 1).padStart(2, '0')));
+      var body = el('span', 'body');
+      body.appendChild(el('span', 'title', p.title));
+      if (typeof p.description === 'string' && p.description) body.appendChild(el('span', 'desc', p.description));
+      row.appendChild(body);
+      var tags = Array.isArray(p.tags) ? p.tags.filter(function (t) { return typeof t === 'string' && t; }).join(' · ') : '';
+      row.appendChild(el('span', 'tags', tags));
+      row.appendChild(url ? arrow() : el('span'));
+      li.appendChild(row);
+      list.appendChild(li);
+    });
+    count.textContent = shown.length + (shown.length === 1 ? ' project' : ' projects');
+  }
+
+  fetch('projects.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); })
+    .then(function (d) { render(Array.isArray(d) ? d : (d && d.projects) || []); })
+    .catch(function () {
+      count.textContent = '';
+      var li = document.createElement('li');
+      li.appendChild(el('p', 'desc', 'My projects couldn’t be loaded right now. Please try again later.'));
+      list.appendChild(li);
+    });
+})();
+</script>
+</body>
+</html>
