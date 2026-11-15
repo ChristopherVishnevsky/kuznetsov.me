@@ -4,20 +4,20 @@
     "description": "A statistical analysis project from my coursework in data analysis.",
     "tags": ["Statistics", "Data analysis", "Coursework"],
     "link": "",
-    "visible": true
+    "visible": false
   },
   {
     "title": "Economic indicators dashboard",
     "description": "An interactive dashboard tracking inflation, interest rates and unemployment over time.",
-    "tags": ["Python", "Pandas", "Plotly"],
+    "tags": ["Python", "Pandas"],
     "link": "",
     "visible": true
   },
   {
     "title": "This website",
     "description": "A one-page digital business card, designed in Figma.",
-    "tags": ["Figma", "Design"],
-    "link": "",
+    "tags": ["Figma", "Design", "Claude"],
+    "link": "x.com",
     "visible": true
   }
 ]
